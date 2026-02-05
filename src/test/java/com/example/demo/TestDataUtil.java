@@ -9,8 +9,15 @@ public final class TestDataUtil {
     private TestDataUtil(){
     }
 
-    public static AuthorEntity createTestAuthorA() {
+    public static AuthorEntity createTestAuthorEntityA() {
         return AuthorEntity.builder()
+                .name("Abigail Rose")
+                .age(80)
+                .build();
+    }
+
+    public static AuthorDto createTestAuthorDtoA() {
+        return AuthorDto.builder()
                 .name("Abigail Rose")
                 .age(80)
                 .build();
@@ -38,11 +45,11 @@ public final class TestDataUtil {
                 .build();
     }
 
-    public static BookDto createTestBookDtoA(final AuthorDto author) {
+    public static BookDto createTestBookDtoA(final AuthorDto authorDto) {
         return BookDto.builder()
                 .isbn("978-1-2345-6789-0")
                 .title("The Shadow in the Attic")
-                .author(author)
+                .author(authorDto)
                 .build();
     }
 
